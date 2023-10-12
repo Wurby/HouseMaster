@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { signInWithEmailAndPassword } from "firebase/auth";
+  import { createUserWithEmailAndPassword } from "firebase/auth";
   import { auth } from "../../firebase/firebase";
-  import { getContext } from "svelte";
 
   let email = "";
   let password = "";
@@ -9,19 +8,17 @@
   $: errorMessage = "";
 
   const handleSignin = () => {
-    if (auth) {
-      signInWithEmailAndPassword(auth, email, password).catch((error) => {
-        errorCode = error.code;
-        errorMessage = error.message;
-      });
-    }
+    createUserWithEmailAndPassword(auth, email, password).catch((error) => {
+      errorCode = error.code;
+      errorMessage = error.message;
+    });
   };
 </script>
 
 <section
   class="mx-auto flex flex-col bg-slate-300 p-4 ring-1 ring-slate-600 gap-4 shadow-md shadow-slate-400"
 >
-  <p class="text-center text-3xl">Login</p>
+  <p class="text-center text-3xl">Create Account</p>
   <form class="flex flex-col gap-4" on:submit|preventDefault={handleSignin}>
     <input
       type="email"
@@ -43,8 +40,8 @@
     />
     <p class="text-red-500">{errorCode} {errorMessage}</p>
     <button
-      class="text-lg px-4 h-8 w-32 bg-slate-200 self-center hover:bg-slate-100 active:translate-y-px"
-      >Login</button
+      class="text-md px-4 h-8 w-48 bg-slate-200 self-center hover:bg-slate-100 active:translate-y-px"
+      >Create Account</button
     >
   </form>
 </section>
