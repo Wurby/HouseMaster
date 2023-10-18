@@ -1,1 +1,3 @@
-<p class="text-3xl">Home Works!</p>
+<section>
+  <h1>House Master</h1>
+</section>
