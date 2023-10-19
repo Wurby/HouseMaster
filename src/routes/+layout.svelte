@@ -3,6 +3,11 @@
   import { FirebaseApp, SignedIn, SignedOut, userStore } from "sveltefire";
   import { auth, firestore, storage } from "../firebase/firebase";
   import Typography from "../components/general/Typography.svelte";
+
+  import { dev } from "$app/environment";
+  import { inject } from "@vercel/analytics";
+
+  inject({ mode: dev ? "development" : "production" });
 </script>
 
 <FirebaseApp {auth} {firestore} {storage}>
