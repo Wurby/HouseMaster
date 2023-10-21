@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer utilities {
-    .text-2xs {
-        font-size: 0.6rem;
-        line-height: .75rem;
-    }
+	.text-2xs {
+		font-size: 0.6rem;
+		line-height: 0.75rem;
+	}
 }
