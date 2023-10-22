@@ -1,4 +1,5 @@
 import type Category from './category';
+import type UnitOfMeasurement from './unit';
 
 /**
  * Represents an item in the inventory.
@@ -9,7 +10,7 @@ export type Item = {
 	description: string;
 	category: Category[];
 	quantity: number | null;
-	unitOfMeasurement: string; // oz, lbs, cans, etc.
+	unitOfMeasurement: UnitOfMeasurement[]; // oz, lbs, cans, etc.
 	location: string; // pantry, fridge, etc.
 	expirationDate: string; // date item expires format yyyy-mm-dd
 	restockDate: string; // date item will need to be replaced format yyyy-mm-dd

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import Button from '../../general/Button.svelte';
 	import Typography from '../../general/Typography.svelte';
 	import Modal from '../../modal/Modal.svelte';
@@ -44,6 +45,7 @@
 	</Button>
 	<section
 		class={`flex h-8 w-full gap-2 divide-x-2 border-x-2 border-b-2 border-slate-300 text-ellipsis overflow-hidden hover:overflow-visible ${className}`}
+		transition:fade={{ duration: 300, delay: 150 }}
 	>
 		<div
 			class="flex-1 text-center my-auto text-2xs w-28 hover:bg-slate-200 hover:rounded-md text-ellipsis hover:ring-1 hover:ring-slate-500 hover:text-lg hover:p-2 hover:shadow-lg hover:shadow-slate-600"

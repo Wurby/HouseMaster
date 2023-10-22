@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import Typography from '../general/Typography.svelte';
 	import Button from '../general/Button.svelte';
+	import { fade } from 'svelte/transition';
 
 	type Variant = 'info' | 'confirm' | 'addItem';
 
@@ -25,7 +26,10 @@
 </script>
 
 {#if visible}
-	<section class="fixed inset-0 z-20 flex justify-center items-center pointer-events-none">
+	<section
+		class="fixed inset-0 z-20 flex justify-center items-center pointer-events-none"
+		in:fade={{ duration: 150 }}
+	>
 		<div
 			class="flex flex-wrap bg-slate-100 rounded-lg shadow-lg border-2 border-slate-300 p-4 w-5/12 pointer-events-auto"
 		>
@@ -60,6 +64,7 @@
 	</section>
 	<button
 		class="fixed left-0 top-0 z-10 w-full h-full bg-black opacity-50"
+		in:fade={{ duration: 150 }}
 		on:click={() => handleCloseModal(false)}
 	/>
 {/if}

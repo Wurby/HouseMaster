@@ -5,6 +5,7 @@
 	import { auth, firestore } from '../../firebase/firebase';
 	import { collectionStore } from 'sveltefire';
 	import type Category from '../dashboard/item/types/category';
+	import { fade } from 'svelte/transition';
 
 	const ref = `users/${auth.currentUser?.uid}/categories`;
 	const categories = collectionStore<Category>(firestore, ref);
@@ -72,7 +73,10 @@
 				>
 			{/if}
 			{#each $categories as itemCategory}
-				<div class="flex">
+				<div
+					class="flex"
+					in:fade={{ duration: 300 }}
+				>
 					<Typography
 						className="text-center px-2"
 						variant="h5">{itemCategory.category}</Typography

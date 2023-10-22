@@ -28,7 +28,7 @@
 		console.log('removing item', item);
 		removeItem(item).catch((error) => {
 			console.error(error);
-		})
+		});
 	};
 </script>
 

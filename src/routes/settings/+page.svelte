@@ -1,14 +1,10 @@
 <script lang="ts">
+	import { SignedIn, SignedOut } from 'sveltefire';
+	import Typography from '../../components/general/Typography.svelte';
+	import AddCategory from '../../components/settings/AddCategory.svelte';
+	import AddUnit from '../../components/settings/AddUnit.svelte';
 
-	import { SignedIn, SignedOut } from "sveltefire";
-import Typography from "../../components/general/Typography.svelte";
-	import AddCategory from "../../components/settings/AddCategory.svelte";
-	import AddUnit from "../../components/settings/AddUnit.svelte";
-
-const componentCards = [
-    AddCategory,
-    AddUnit
-];
+	const componentCards = [AddCategory, AddUnit];
 </script>
 
 <SignedIn>
