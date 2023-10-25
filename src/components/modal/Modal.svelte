@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import Typography from '../general/Typography.svelte';
 	import Button from '../general/Button.svelte';
-	import { fade, fly, slide } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { backInOut } from 'svelte/easing';
 
 	type Variant = 'info' | 'confirm' | 'quickAddItem';

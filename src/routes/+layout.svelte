@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import { FirebaseApp, SignedIn, SignedOut, userStore } from 'sveltefire';
+	import { FirebaseApp, SignedIn, SignedOut } from 'sveltefire';
 	import { auth, firestore, storage } from '../firebase/firebase';
 	import Typography from '../components/general/Typography.svelte';
 

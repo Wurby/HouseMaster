@@ -21,7 +21,7 @@
 		title="Quick Add"
 		variant="quickAddItem"
 		visible={mobileAddItemVisible}
-		on:modalResponse={(e) => {
+		on:modalResponse={() => {
 			mobileAddItemVisible = false;
 		}}
 	>
