@@ -2,7 +2,7 @@ name: linting
 run-name: ${{ github.actor }}
 on: [pull_request]
 jobs:
-    check-bats-version:
+    Linting:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
