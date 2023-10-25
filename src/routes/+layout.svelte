@@ -52,7 +52,7 @@
 		</SignedIn>
 	</nav>
 	<main class="flex justify-center w-full h-screen bg-slate-100">
-		<section class="w-full md:max-w-5xl">
+		<section class="w-full max-w-xs md:max-w-5xl">
 			<div class="w-full h-20" />
 
 			<SignedOut>

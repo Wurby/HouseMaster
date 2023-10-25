@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"live": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint --ext .js,.ts,.svelte .",

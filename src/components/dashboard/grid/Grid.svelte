@@ -6,6 +6,7 @@
 	import removeItem from '../item/db/removeItem';
 
 	import ItemComponent from '../item/ItemComponent.svelte';
+	import MobileItemComponent from '../item/MobileItemComponent.svelte';
 
 	const columnHeaders = [
 		'Name',
@@ -21,6 +22,8 @@
 		'Date Added',
 	];
 
+	const mobileColumnHeaders = ['Name', 'Category', 'Quantity', 'Location', 'Expiration Date'];
+
 	const ref = `users/${auth.currentUser?.uid}/items`;
 	const items = collectionStore<Item>(firestore, ref);
 
@@ -32,7 +35,24 @@
 	};
 </script>
 
-<section class="w-full h-full">
+<!-- MobileView -->
+<section class="w-full h-full md:hidden">
+	<div class="flex h-8 w-full gap-2 divide-x-2 divide-slate-400 border-2 border-slate-400 bg-slate-300">
+		{#each mobileColumnHeaders as columnHeader}
+			<div class="flex-1 text-center my-auto text-2xs w-28">{columnHeader}</div>
+		{/each}
+	</div>
+	{#each $items as item, index}
+		<MobileItemComponent
+			removeItem={handleRemoveItem}
+			className={index % 2 == 1 ? 'bg-slate-200' : ''}
+			{item}
+		/>
+	{/each}
+</section>
+
+<!-- DesktopView -->
+<section class="w-full h-full hidden md:block">
 	<section
 		class="flex h-8 w-full gap-2 divide-x-2 divide-slate-400 border-x-2 border-y-2 border-slate-400 bg-slate-300"
 	>
