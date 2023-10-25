@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	import { backInOut } from 'svelte/easing';
 	import Scanner from './Scanner.svelte';
 	import Typography from '../general/Typography.svelte';
