@@ -1,6 +1,6 @@
 name: linting
 run-name: ${{ github.actor }}
-on: [pull_request]
+on: [pull_request, push]
 jobs:
     Linting:
         runs-on: ubuntu-latest
