@@ -27,11 +27,11 @@
 
 	const handleAddUnit = () => {
 		if (formField.unit == '') {
-			formFieldValidation.message = 'Category cannot be empty';
+			formFieldValidation.message = 'Size cannot be empty';
 			formFieldValidation.error = true;
 			resetForm();
 		} else if ($units.find((units) => units.unit == formField.unit)) {
-			formFieldValidation.message = 'Category already exists';
+			formFieldValidation.message = 'Size already exists';
 			formFieldValidation.error = true;
 			resetForm();
 		} else {
@@ -103,7 +103,7 @@
 		<label class="relative flex w-full h-8">
 			<input
 				type="text"
-				id="category"
+				id="unit"
 				placeholder=" "
 				on:keydown={(e) => {
 					if (e.key == 'Enter') {
@@ -116,7 +116,7 @@
 			<div
 				class="absolute flex w-full h-8 text-2xs text-slate-400 -translate-y-4 peer-placeholder-shown:text-sm peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-4 peer-focus:text-2xs transition-all duration-300 ease-in-out"
 			>
-				<span class="my-auto bg-slate-100 ml-1 px-2 rounded-full">Category</span>
+				<span class="my-auto bg-slate-100 ml-1 px-2 rounded-full">Size</span>
 			</div>
 		</label>
 		{#if formFieldValidation.error}
