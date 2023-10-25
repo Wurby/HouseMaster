@@ -6,8 +6,6 @@
 
 	const dispatch = createEventDispatcher();
 
-	$: failMessage = '';
-
 	$: scanner = null as Html5QrcodeScanner | null;
 
 	onMount(() => {
