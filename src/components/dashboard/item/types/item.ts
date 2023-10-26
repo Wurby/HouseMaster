@@ -1,4 +1,3 @@
-import type Category from './category';
 import type UnitOfMeasurement from './unit';
 
 /**
@@ -8,7 +7,7 @@ export type Item = {
 	id: string; // barcode number otherwise randomly generated
 	name: string;
 	description: string;
-	category: Category[];
+	category: string;
 	quantity: number | null;
 	unitOfMeasurement: UnitOfMeasurement[]; // oz, lbs, cans, etc.
 	location: string; // pantry, fridge, etc.
