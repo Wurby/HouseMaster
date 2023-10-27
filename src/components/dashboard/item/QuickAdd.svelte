@@ -9,7 +9,7 @@
 
 	const defaultFormField = {
 		name: '',
-		category: [],
+		category: '',
 		quantity: null,
 		location: '',
 		expirationDate: '',
@@ -19,7 +19,7 @@
 		id: '',
 		name: '',
 		description: '',
-		category: [],
+		category: '',
 		quantity: null,
 		unitOfMeasurement: [],
 		location: '',

@@ -12,7 +12,7 @@
 		id: '',
 		name: '',
 		description: '',
-		category: [],
+		category: '',
 		quantity: null,
 		unitOfMeasurement: [],
 		location: '',

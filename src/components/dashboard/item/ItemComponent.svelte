@@ -4,6 +4,7 @@
 	import Typography from '../../general/Typography.svelte';
 	import Modal from '../../modal/Modal.svelte';
 	import type Item from './types/item';
+
 	export let className = '';
 	export let removeItem: (item: Item) => void;
 	export let item: Item;
