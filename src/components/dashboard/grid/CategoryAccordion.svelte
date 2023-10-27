@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { fade, fly, slide } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import Typography from '../../general/Typography.svelte';
 	import ItemComponent from '../item/ItemComponent.svelte';
 	import MobileItemComponent from '../item/MobileItemComponent.svelte';
 	import type Item from '../item/types/item';
-	import Button from '../../general/Button.svelte';
-	import { flip } from 'svelte/animate';
 
 	export let category = '';
 	export let mobileColumnHeaders: string[] = [];
