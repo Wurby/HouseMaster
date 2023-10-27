@@ -7,12 +7,12 @@
 
 	import ItemComponent from '../item/ItemComponent.svelte';
 	import MobileItemComponent from '../item/MobileItemComponent.svelte';
-	import { derived, writable } from 'svelte/store';
-	import Typography from '../../general/Typography.svelte';
+	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
-	import Button from '../../general/Button.svelte';
+
 	import CategoryAccordion from './CategoryAccordion.svelte';
 	import { fade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
 
 	export let categoryView = false;
 
@@ -67,26 +67,31 @@
 {#if categoryView}
 	<!-- MobileView -->
 	<section
-		class="w-full h-full flex flex-col gap-8 md:hidden"
+		class="w-full h-full flex flex-col gap-4 md:hidden"
 		transition:fade|global
 	>
-		{#each Object.entries($itemsByCategory) as [category, items]}
-			<CategoryAccordion
-				{items}
-				{mobileColumnHeaders}
-				{category}
-				{handleRemoveItem}
-				variant="mobile"
-			/>
+		{#each Object.entries($itemsByCategory) as [category, items] (category)}
+			<div
+				animate:flip
+				class="w-full"
+			>
+				<CategoryAccordion
+					{items}
+					{mobileColumnHeaders}
+					{category}
+					{handleRemoveItem}
+					variant="mobile"
+				/>
+			</div>
 		{/each}
 	</section>
 
 	<!-- DesktopView -->
 	<section
-		class="w-full h-full flex-col gap-8 hidden md:flex"
+		class="w-full h-full flex-col gap-4 hidden md:flex"
 		transition:fade|global
 	>
-		{#each Object.entries($itemsByCategory) as [category, items]}
+		{#each Object.entries($itemsByCategory) as [category, items] (category)}
 			<CategoryAccordion
 				{items}
 				{columnHeaders}
